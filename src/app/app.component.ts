@@ -6,7 +6,11 @@ import {initFlowbite} from "flowbite";
 @Component({
   selector: 'app-root',
   template: `
-    <app-book-details></app-book-details>
+    <app-nav-bar></app-nav-bar>
+    <div class="bg-white dark:bg-gray-900">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
   `,
   styleUrl: './app.component.scss'
 })
