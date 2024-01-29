@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
-import { TestimonialComponent } from './testimonial/testimonial.component';
 import { HomeComponent } from './home/home.component';
-import { BooksComponent } from './books/books.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { CartComponent } from './cart/cart.component';
-import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
-import { CatSelectionComponent } from './cat-selection/cat-selection.component';
+import { FormComponent } from './form/form.component';
 import {RouterModule, Routes} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
+import {FormsModule} from "@angular/forms";
+import {EmployeeService} from "./service/employee.service";
 
 const routes: Routes = [
   {
@@ -27,22 +27,17 @@ const routes: Routes = [
     component:HomeComponent,
   },
   {
-    path:'books',
-    component:BooksComponent
+    path:'employees',
+    component:EmployeesComponent
   },
   {
-    path:'book-details',
-    component:BookDetailsComponent
+    path:'employees/employee-details',
+    component:EmployeeDetailsComponent
   },
   {
     path:'cart',
     component:CartComponent
-  },
-  {
-    path:'checkout',
-    component:CheckoutPageComponent
   }
-
 ]
 
 
@@ -52,22 +47,21 @@ const routes: Routes = [
     NavBarComponent,
     BannerComponent,
     FooterComponent,
-    TestimonialComponent,
     HomeComponent,
-    BooksComponent,
-    BookDetailsComponent,
+    EmployeesComponent,
+    EmployeeDetailsComponent,
     CartComponent,
-    CheckoutPageComponent,
-    CatSelectionComponent,
+    FormComponent,
     NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    FormsModule,
 
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
