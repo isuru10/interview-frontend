@@ -8,8 +8,7 @@ import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { CartComponent } from './cart/cart.component';
+import { SalaryComponent } from './salary/salary.component';
 import { FormComponent } from './form/form.component';
 import {RouterModule, Routes} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -31,15 +30,14 @@ const routes: Routes = [
     component:EmployeesComponent
   },
   {
-    path:'employees/employee-details',
-    component:EmployeeDetailsComponent
+    path:'salaries',
+    component:SalaryComponent
   },
   {
-    path:'cart',
-    component:CartComponent
+    path:'error',
+    component: NotFoundComponent
   }
 ]
-
 
 @NgModule({
   declarations: [
@@ -49,8 +47,7 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     EmployeesComponent,
-    EmployeeDetailsComponent,
-    CartComponent,
+    SalaryComponent,
     FormComponent,
     NotFoundComponent,
   ],
