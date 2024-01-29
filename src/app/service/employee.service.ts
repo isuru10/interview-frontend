@@ -24,6 +24,7 @@ export class EmployeeService {
       if(res.ok){
         res.json().then(employee => {
           this.employeeList.push(employee)
+          alert("Employee added successfully")
         })
       } else {
         alert("Failed to add the employee");
@@ -61,9 +62,9 @@ export class EmployeeService {
     return this.employeeList;
   }
 
-  getAllSalariesByEmployeeAndYear(){
+  getAllSalariesByEmployeeAndYear(idNum: string, year: string){
     this.salaryList = [];
-    fetch(`${(this.API_BASE_URL)}?query=1n2024`)
+    fetch(`${(this.API_BASE_URL)}?query=${idNum}n${year}`)
       .then(res => {
         if(res.ok){
           res.json().then(data => data.forEach((salary:SalaryDto) => this.salaryList.push(salary)));
