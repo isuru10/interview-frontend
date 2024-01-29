@@ -41,8 +41,17 @@ export class EmployeeService {
   }
 
   deleteEmployee(employee:EmployeeDto){
-    // const index = this.employeeList.indexOf(employee);
-    // this.employeeList.splice(employee.idNumber, 1);
+    fetch(`${(this.API_BASE_URL)}/${employee.empId}`, {method: "DELETE"})
+      .then(res => {
+        if(res.status === 204) {
+          this.getAllEmployees();
+          alert("Employee deleted successfully")
+        } else {
+          alert("Failed to delete employee")
+        }
+      }).catch(err => {
+        alert("Something went wrong please try again");
+      });
   }
 
   getAllEmployees(){

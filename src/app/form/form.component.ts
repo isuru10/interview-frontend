@@ -44,7 +44,7 @@ export class FormComponent {
 
     //public  idNumber:string, public contactNumber:string, public address:string, public activeStatus:boolean
 
-    this.service.addNewEmployee(new EmployeeDto(idNum, contact, address, true ));
+    this.service.addNewEmployee(new EmployeeDto("", idNum, contact, address, true ));
     // idNumber.value = "";
     // phoneElm.value = "";
     // addressElm.value = "";
