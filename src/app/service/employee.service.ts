@@ -45,6 +45,7 @@ export class EmployeeService {
   }
 
   getAllEmployees(){
+    this.employeeList = [];
     fetch(`${(this.API_BASE_URL)}`)
       .then(res => {
         if(res.ok){
@@ -61,7 +62,8 @@ export class EmployeeService {
   }
 
   getAllSalariesByEmployeeAndYear(){
-    fetch(`${(this.API_BASE_URL)}?query=5n2024`)
+    this.salaryList = [];
+    fetch(`${(this.API_BASE_URL)}?query=1n2024`)
       .then(res => {
         if(res.ok){
           res.json().then(data => data.forEach((salary:SalaryDto) => this.salaryList.push(salary)));
